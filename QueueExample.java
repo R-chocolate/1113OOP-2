@@ -1,22 +1,26 @@
-class MyQueue<T> {
+import java.util.LinkedList;
 
-    public MyQueue() {
-    }
+class MyQueue<T> extends LinkedList<T> {
 
+    // enqueue: add item to the tail of queue
     public void enqueue(T item) {
+        this.addLast(item);
     }
 
+    // dequeue: remove and return the head of queue
     public T dequeue() {
-        return queue.first();
-    }
-    
-    public boolean isEmpty() {
-        return queue.isEmpty();
+        if (this.isEmpty()) return null;
+        return this.removeFirst();
     }
 
-    // 返回队列中的元素数量
+    // isEmpty: return true if queue has no elements
+    public boolean isEmpty() {
+        return super.isEmpty();
+    }
+
+    // size: return number of elements in queue
     public int size() {
-        return queue.size();
+        return super.size();
     }
 }
 
